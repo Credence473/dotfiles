@@ -1,0 +1,7 @@
+[user]
+	name = Gautam Paul
+	email = gautam.paul@obspm.fr
+[core]
+	editor = nvim
+[init]
+	defaultBranch = main
