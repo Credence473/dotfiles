@@ -133,6 +133,7 @@ unset __mamba_setup
 alias conda="echo UseMamba"
 
 export SSH_ASKPASS=/usr/bin/ksshaskpass
+export SSH_ASKPASS_REQUIRE=prefer
 eval "$(zoxide init bash)"
 eval "$(fzf --bash)"
 # custom gautam shortcuts
