@@ -3,156 +3,156 @@
   "logo": {
     "type": "kitty-icat",
     "source": "~/.config/fastfetch/pikachu-dance.gif", // Path to your image
-    "width": 25
+    "width": 20,
   },
   "display": {
     "separator": "  ",
     "color": {
-      "separator": "1" // Bold
+      "separator": "1", // Bold
     },
     "constants": ["─────────────────"],
     "key": {
       "type": "icon",
-      "paddingLeft": 1
+      "paddingLeft": 1,
     },
     "temp": {
-      "unit": "C"
+      "unit": "C",
     },
     "bar": {
       "charElapsed": "■",
       "charTotal": "□",
-      "width": 10
+      "width": 10,
     },
-    "percent": { "type": 9 }
+    "percent": { "type": 9 },
   },
   "modules": [
     {
       "type": "title",
-      "format": "                             {user-name-colored}{at-symbol-colored}{host-name-colored}"
+      "format": "                             {user-name-colored}{at-symbol-colored}{host-name-colored}",
     },
     "break",
     {
       "type": "custom",
-      "format": "┌{$1} {#1}Hardware Information{#} {$1}┐"
+      "format": "┌{$1} {#1}Hardware Information{#} {$1}┐",
     },
     // "break",
 
     {
       "key": "Machine      ",
       "keyColor": "green",
-      "type": "host"
+      "type": "host",
     },
     {
       "key": "Board        ",
       "keyColor": "blue",
-      "type": "board"
+      "type": "board",
     },
     {
       "key": "CPU          ",
       "keyColor": "yellow",
-      "type": "cpu"
+      "type": "cpu",
     },
     {
       "key": "GPU          ",
       "keyColor": "blue",
-      "type": "gpu"
+      "type": "gpu",
     },
     {
       "key": "System Disk  ",
       "folders": "/",
       "keyColor": "cyan",
       "type": "disk",
-      "format": "{size-percentage-bar} {size-used} / {size-total} - {filesystem}"
+      "format": "{size-percentage-bar} {size-used} / {size-total} - {filesystem}",
     },
     {
       "key": "Home Disk    ",
       "folders": "/home",
       "keyColor": "cyan",
       "type": "disk",
-      "format": "{size-percentage-bar} {size-used} / {size-total} - {filesystem}"
+      "format": "{size-percentage-bar} {size-used} / {size-total} - {filesystem}",
     },
     {
       "key": "Memory       ",
       "keyColor": "magenta",
-      "type": "memory"
+      "type": "memory",
     },
     {
       "key": "Swap         ",
       "keyColor": "red",
-      "type": "swap"
+      "type": "swap",
     },
 
     {
       "key": "Battery      ",
       "keyColor": "green",
-      "type": "battery"
+      "type": "battery",
     },
     {
       "key": "Power Adapter",
       "keyColor": "blue",
-      "type": "poweradapter"
+      "type": "poweradapter",
     },
     {
       "key": "Bluetooth    ",
       "keyColor": "cyan",
-      "type": "bluetooth"
+      "type": "bluetooth",
     },
     {
       "key": "Display      ",
       "keyColor": "yellow",
-      "type": "display"
+      "type": "display",
     },
     // "break",
     {
       "type": "custom", // SoftwareStart
-      "format": "├{$1} {#1}Software Information{#} {$1}┤"
+      "format": "├{$1} {#1}Software Information{#} {$1}┤",
     },
     // "break",
     {
       "key": "OS           ",
       "keyColor": "red",
-      "type": "os"
+      "type": "os",
     },
     {
       "key": "BIOS         ",
       "keyColor": "cyan",
-      "type": "bios"
+      "type": "bios",
     },
 
     {
       "key": "Kernel       ",
       "keyColor": "magenta",
-      "type": "kernel"
+      "type": "kernel",
     },
     {
       "type": "lm",
       "key": "Login Manager",
-      "keyColor": "green"
+      "keyColor": "green",
     },
     {
       "key": "WM           ",
       "keyColor": "blue",
-      "type": "wm"
+      "type": "wm",
     },
     {
       "key": "DE           ",
       "keyColor": "green",
-      "type": "de"
+      "type": "de",
     },
     {
       "key": "Shell        ",
       "keyColor": "cyan",
-      "type": "shell"
+      "type": "shell",
     },
     {
       "key": "Terminal     ",
       "keyColor": "red",
-      "type": "terminal"
+      "type": "terminal",
     },
     {
       "key": "Terminal Font",
       "keyColor": "magenta",
-      "type": "terminalfont"
+      "type": "terminalfont",
     },
     // {
     //   "key": "Theme        ",
@@ -162,18 +162,18 @@
     {
       "key": "Icons        ",
       "keyColor": "blue",
-      "type": "icons"
+      "type": "icons",
     },
 
     {
       "key": "Packages     ",
       "keyColor": "cyan",
-      "type": "packages"
+      "type": "packages",
     },
     {
       "key": "Uptime       ",
       "keyColor": "red",
-      "type": "uptime"
+      "type": "uptime",
     },
     // {
     //   "type": "media",
@@ -184,13 +184,13 @@
       "key": "Local IP     ",
       "keyColor": "red",
       "type": "localip",
-      "compact": true
+      "compact": true,
     },
     {
       "key": "Public IP    ",
       "keyColor": "cyan",
       "type": "publicip",
-      "timeout": 100
+      "timeout": 100,
     },
     // {
     //   "key": "Wi-Fi        ",
@@ -206,13 +206,13 @@
     // "break",
     {
       "type": "custom",
-      "format": "└{$1}────────────────────{$1}┘"
-    }
+      "format": "└{$1}────────────────────{$1}┘",
+    },
     // "break",
     // {
     //   "type": "colors",
     //   "paddingLeft": 34,
     //   "symbol": "circle",
     // },
-  ]
+  ],
 }

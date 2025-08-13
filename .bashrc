@@ -118,20 +118,6 @@ export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"                   # This loads nvm
 [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion" # This loads nvm bash_completion
 
-# >>> mamba initialize >>>
-# !! Contents within this block are managed by 'mamba shell init' !!
-export MAMBA_EXE='/home/credence/miniforge3/bin/mamba'
-export MAMBA_ROOT_PREFIX='/home/credence/miniforge3'
-__mamba_setup="$("$MAMBA_EXE" shell hook --shell bash --root-prefix "$MAMBA_ROOT_PREFIX" 2>/dev/null)"
-if [ $? -eq 0 ]; then
-	eval "$__mamba_setup"
-else
-	alias mamba="$MAMBA_EXE" # Fallback on help from mamba activate
-fi
-unset __mamba_setup
-# <<< mamba initialize <<<
-alias conda="echo UseMamba"
-
 export SSH_ASKPASS=/usr/bin/ksshaskpass
 export SSH_ASKPASS_REQUIRE=prefer
 eval "$(zoxide init bash)"
@@ -141,7 +127,39 @@ alias rg="rg --hyperlink-format=kitty"
 alias ls="eza --hyperlink --color=auto --icons=always"
 alias qup="sudo apt update && sudo apt upgrade -y"
 alias lsa="ls -alF"
+alias la="ls -a"
+alias c="clear"
+alias e="exit"
 alias cat="batcat"
 alias fetch="fastfetch -c ~/.config/fastfetch/gp.jsonc"
 # alias cdw="cd ~/Documents/Internship && conda activate dscut"
 alias dgit='git --git-dir=$HOME/.dotfiles/ --work-tree=$HOME'
+
+# >>> conda initialize >>>
+# !! Contents within this block are managed by 'conda init' !!
+__conda_setup="$('/home/credence/miniforge3/bin/conda' 'shell.bash' 'hook' 2> /dev/null)"
+if [ $? -eq 0 ]; then
+    eval "$__conda_setup"
+else
+    if [ -f "/home/credence/miniforge3/etc/profile.d/conda.sh" ]; then
+        . "/home/credence/miniforge3/etc/profile.d/conda.sh"
+    else
+        export PATH="/home/credence/miniforge3/bin:$PATH"
+    fi
+fi
+unset __conda_setup
+# <<< conda initialize <<<
+
+
+# >>> mamba initialize >>>
+# !! Contents within this block are managed by 'mamba shell init' !!
+export MAMBA_EXE='/home/credence/miniforge3/bin/mamba';
+export MAMBA_ROOT_PREFIX='/home/credence/miniforge3';
+__mamba_setup="$("$MAMBA_EXE" shell hook --shell bash --root-prefix "$MAMBA_ROOT_PREFIX" 2> /dev/null)"
+if [ $? -eq 0 ]; then
+    eval "$__mamba_setup"
+else
+    alias mamba="$MAMBA_EXE"  # Fallback on help from mamba activate
+fi
+unset __mamba_setup
+# <<< mamba initialize <<<

@@ -50,7 +50,7 @@ style = 'powerline'
 [blocks.segments.properties]
 display_mode = "environment"
 home_enabled = true
-display_default = false
+display_default = true
 
 #
 # [[blocks.segments]]
