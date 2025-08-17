@@ -132,34 +132,43 @@ alias c="clear"
 alias e="exit"
 alias cat="batcat"
 alias fetch="fastfetch -c ~/.config/fastfetch/gp.jsonc"
+alias sfetch="fastfetch -c ~/.config/fastfetch/gp_short.jsonc"
 # alias cdw="cd ~/Documents/Internship && conda activate dscut"
 alias dgit='git --git-dir=$HOME/.dotfiles/ --work-tree=$HOME'
 
 # >>> conda initialize >>>
 # !! Contents within this block are managed by 'conda init' !!
-__conda_setup="$('/home/credence/miniforge3/bin/conda' 'shell.bash' 'hook' 2> /dev/null)"
+__conda_setup="$('/home/credence/miniforge3/bin/conda' 'shell.bash' 'hook' 2>/dev/null)"
 if [ $? -eq 0 ]; then
-    eval "$__conda_setup"
+	eval "$__conda_setup"
 else
-    if [ -f "/home/credence/miniforge3/etc/profile.d/conda.sh" ]; then
-        . "/home/credence/miniforge3/etc/profile.d/conda.sh"
-    else
-        export PATH="/home/credence/miniforge3/bin:$PATH"
-    fi
+	if [ -f "/home/credence/miniforge3/etc/profile.d/conda.sh" ]; then
+		. "/home/credence/miniforge3/etc/profile.d/conda.sh"
+	else
+		export PATH="/home/credence/miniforge3/bin:$PATH"
+	fi
 fi
 unset __conda_setup
 # <<< conda initialize <<<
 
-
 # >>> mamba initialize >>>
 # !! Contents within this block are managed by 'mamba shell init' !!
-export MAMBA_EXE='/home/credence/miniforge3/bin/mamba';
-export MAMBA_ROOT_PREFIX='/home/credence/miniforge3';
-__mamba_setup="$("$MAMBA_EXE" shell hook --shell bash --root-prefix "$MAMBA_ROOT_PREFIX" 2> /dev/null)"
+export MAMBA_EXE='/home/credence/miniforge3/bin/mamba'
+export MAMBA_ROOT_PREFIX='/home/credence/miniforge3'
+__mamba_setup="$("$MAMBA_EXE" shell hook --shell bash --root-prefix "$MAMBA_ROOT_PREFIX" 2>/dev/null)"
 if [ $? -eq 0 ]; then
-    eval "$__mamba_setup"
+	eval "$__mamba_setup"
 else
-    alias mamba="$MAMBA_EXE"  # Fallback on help from mamba activate
+	alias mamba="$MAMBA_EXE" # Fallback on help from mamba activate
 fi
 unset __mamba_setup
 # <<< mamba initialize <<<
+# Yazi shell cd after exiting
+export EDITOR="nvim"
+function y() {
+	local tmp="$(mktemp -t "yazi-cwd.XXXXXX")" cwd
+	yazi "$@" --cwd-file="$tmp"
+	IFS= read -r -d '' cwd <"$tmp"
+	[ -n "$cwd" ] && [ "$cwd" != "$PWD" ] && builtin cd -- "$cwd"
+	rm -f -- "$tmp"
+}
