@@ -10,3 +10,11 @@ vim.keymap.set(
     [[:%s///g<Left><Left><Left>]],
     { noremap = true, silent = false, desc = "Search and Replace in file" }
 )
+
+vim.keymap.set("n", "gf", function()
+    if require("obsidian").util.cursor_on_markdown_link() then
+        return "<cmd>ObsidianFollowLink<CR>"
+    else
+        return "gf"
+    end
+end, { noremap = false, expr = true })
