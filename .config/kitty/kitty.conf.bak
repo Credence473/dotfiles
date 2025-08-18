@@ -4,17 +4,20 @@
 editor vim
 
 # BEGIN_KITTY_THEME
-# Catppuccin-Mocha
+# Dracula
 include current-theme.conf
 # END_KITTY_THEME
 
 # BEGIN_KITTY_FONTS
-font_family      family="AnonymicePro Nerd Font Mono"
+font_family      CaskaydiaCove Nerd Font
 bold_font        auto
 italic_font      auto
 bold_italic_font auto
-font_size 14.0
+font_size        10
 # END_KITTY_FONTS
+
+# Ligatures disable under cursor
+disable_ligatures cursor
 
 #open actions
 include open-actions.conf

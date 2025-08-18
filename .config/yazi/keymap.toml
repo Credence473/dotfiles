@@ -7,5 +7,6 @@
 prepend_keymap = [
 	# Goto
 	{ on = ["g", "v"], run = "cd ~/Videos", desc = "Go ~/Videos" },
+	{ on = ["g", "m"], run = "cd ~/Music/MUSICZ", desc = "Go ~/Music/MUSICZ" },
 	{ on = "f", run = "plugin jump-to-char", desc = "Jump to char" },
 ]

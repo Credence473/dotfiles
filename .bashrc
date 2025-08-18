@@ -118,8 +118,6 @@ export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"                   # This loads nvm
 [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion" # This loads nvm bash_completion
 
-export SSH_ASKPASS=/usr/bin/ksshaskpass
-export SSH_ASKPASS_REQUIRE=prefer
 eval "$(zoxide init bash)"
 eval "$(fzf --bash)"
 # custom gautam shortcuts
@@ -135,6 +133,7 @@ alias fetch="fastfetch -c ~/.config/fastfetch/gp.jsonc"
 alias sfetch="fastfetch -c ~/.config/fastfetch/gp_short.jsonc"
 # alias cdw="cd ~/Documents/Internship && conda activate dscut"
 alias dgit='git --git-dir=$HOME/.dotfiles/ --work-tree=$HOME'
+alias mpy='mpv --no-resume-playback'
 
 # >>> conda initialize >>>
 # !! Contents within this block are managed by 'conda init' !!
