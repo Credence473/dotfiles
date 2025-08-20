@@ -15,3 +15,6 @@ vim.opt.wrap = true
 -- Search configs
 -- vim.opt.hlsearch = true
 -- vim.opt.incsearch = true
+
+-- disable this to enable copilot autocomplete
+vim.g.ai_cmp = false

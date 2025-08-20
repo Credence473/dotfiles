@@ -1,6 +1,12 @@
 version = 3
 final_space = true
 
+[upgrade]
+notice = true
+interval = "168h"
+auto = false
+source = "cdn"
+
 [palette]
 blue = '#8AADF4'
 lavender = '#B7BDF8'
@@ -18,12 +24,6 @@ tan = '#CC3802'
 teal = '#047E84'
 teal_blue = '#33658A'
 white = '#FFFFFF'
-
-[upgrade]
-source = 'cdn'
-interval = '168h'
-auto = false
-notice = true
 
 [[blocks]]
 type = 'prompt'
