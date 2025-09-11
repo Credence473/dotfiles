@@ -127,13 +127,13 @@ alias qup="sudo apt update && sudo apt upgrade -y"
 alias lsa="ls -alF"
 alias la="ls -a"
 alias c="clear"
-alias e="exit"
+alias q="exit"
 alias cat="batcat"
 alias fetch="fastfetch -c ~/.config/fastfetch/gp.jsonc"
 alias sfetch="fastfetch -c ~/.config/fastfetch/gp_short.jsonc"
 # alias cdw="cd ~/Documents/Internship && conda activate dscut"
 alias dgit='git --git-dir=$HOME/.dotfiles/ --work-tree=$HOME'
-alias mpy='mpv --no-resume-playback'
+# alias mpy='mpv --no-resume-playback'
 
 # >>> conda initialize >>>
 # !! Contents within this block are managed by 'conda init' !!
