@@ -28,3 +28,5 @@ map("n", "<leader>ut", function()
   vim.cmd.colorscheme("catppuccin")
   vim.notify("Catppuccin transparency: " .. (transparent and "ON" or "OFF"))
 end, { desc = "Toggle Catppuccin Transparent BG" })
+
+map("n", "<C-a>", "ggVG", { noremap = true, silent = false, desc = "Select the whole buffer" })

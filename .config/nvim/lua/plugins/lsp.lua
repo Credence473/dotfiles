@@ -1,12 +1,13 @@
 return {
-    {
-        "neovim/nvim-lspconfig",
-        ---@class PluginLspOpts
-        opts = {
-            ---@type lspconfig.options
-            servers = {
-                ruff = { enabled = false },
-            },
-        },
+  {
+    "neovim/nvim-lspconfig",
+    ---@class PluginLspOpts
+    opts = {
+      ---@type lspconfig.options
+      servers = {
+        ruff = { enabled = false },
+        taplo = {},
+      },
     },
+  },
 }
