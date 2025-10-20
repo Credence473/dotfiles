@@ -23,7 +23,7 @@ set history=1000
 
 set ruler "file stats
 
-set visualbell
+" set visualbell
 
 set wrap
 

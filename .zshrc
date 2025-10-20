@@ -65,7 +65,7 @@ source <(fzf --zsh)
 alias rg="rg --hyperlink-format=kitty"
 alias ls="eza --hyperlink --color=auto --icons=always"
 alias qup="sudo apt update && sudo apt upgrade -y"
-alias lsa="ls -alF"
+alias ll="ls -alF"
 alias la="ls -a"
 alias c="clear"
 alias q="exit"
