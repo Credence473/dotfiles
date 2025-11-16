@@ -76,7 +76,9 @@ alias nv="nvim"
 # alias cdw="cd ~/Documents/Internship && conda activate dscut"
 alias dgit='git --git-dir=$HOME/.dotfiles/ --work-tree=$HOME'
 # alias mpy='mpv --no-resume-playback'
-
+alias wather='curl wttr.in'
+alias nvk='NVIM_APPNAME="nvim-kickstart" nvim'
+alias cd='z'
 
 
 # >>> conda initialize >>>

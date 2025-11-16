@@ -23,3 +23,4 @@ export FZF_ALT_C_OPTS="--preview 'eza --icons=always --tree --color=always {} | 
 #for git
 export SSH_ASKPASS=/usr/bin/ksshaskpass
 export SSH_ASKPASS_REQUIRE=prefer
+. "$HOME/.cargo/env"
