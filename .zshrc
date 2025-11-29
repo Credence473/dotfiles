@@ -79,6 +79,7 @@ alias dgit='git --git-dir=$HOME/.dotfiles/ --work-tree=$HOME'
 alias wather='curl wttr.in'
 alias nvk='NVIM_APPNAME="nvim-kickstart" nvim'
 alias cd='z'
+export MANPAGER="batcat -l man"
 
 
 # >>> conda initialize >>>

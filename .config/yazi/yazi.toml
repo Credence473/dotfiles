@@ -45,6 +45,9 @@ play = [
 	{ run = 'vlc "$@"', orphan = true, for = "unix", desc = "Play with VLC" },
 	{ run = '''mediainfo "$1"; echo "Press enter to exit"; read _''', block = true, desc = "Show media info", for = "unix" },
 ]
+zathura = [
+	{ run = 'zathura "$@"', orphan = true, for = "unix", desc = "Open with Zathura" },
+]
 # play_music = [
 # 	{ run = 'mpv --force-window "$@"', orphan = true, for = "unix", desc = "Play with MPV" },
 # 	{ run = '''mediainfo "$1"; echo "Press enter to exit"; read _''', block = true, desc = "Show media info", for = "unix" },
@@ -95,6 +98,21 @@ rules = [
 	# Empty file
 	{ mime = "inode/empty", use = [
 		"edit",
+		"reveal",
+	] },
+	# PDF
+	{ mime = "application/pdf", use = [
+		"zathura",
+		"reveal",
+	] },
+	# epub
+	{ mime = "application/epub+zip", use = [
+		"zathura",
+		"reveal",
+	] },
+	# djvu
+	{ mime = "image/vnd.djvu", use = [
+		"zathura",
 		"reveal",
 	] },
 	# Fallback
