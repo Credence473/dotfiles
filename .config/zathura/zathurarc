@@ -10,3 +10,5 @@ map D toggle_page_mode
 map r reload
 map R rotate
 map i recolor
+
+set synctex true
