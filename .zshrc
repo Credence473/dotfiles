@@ -69,7 +69,7 @@ alias ll="ls -alF"
 alias la="ls -a"
 alias c="clear"
 alias q="exit"
-alias cat="batcat"
+alias cat="bat"
 alias fetch="fastfetch -c ~/.config/fastfetch/gp.jsonc"
 alias sfetch="fastfetch -c ~/.config/fastfetch/gp_short.jsonc"
 alias nv="nvim"
@@ -79,7 +79,7 @@ alias dgit='git --git-dir=$HOME/.dotfiles/ --work-tree=$HOME'
 alias wather='curl wttr.in'
 alias nvk='NVIM_APPNAME="nvim-kickstart" nvim'
 alias cd='z'
-export MANPAGER="batcat -l man"
+export MANPAGER="bat -l man"
 
 
 # >>> conda initialize >>>
