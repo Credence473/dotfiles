@@ -8,17 +8,13 @@ fi
 # zmodload zsh/zprof
 # Use emacs keybindings even if our EDITOR is set to vi
 bindkey -e
-# bindkey '^p' history-search-backward
-# bindkey '^n' history-search-forward# binds
+bindkey '^p' history-search-backward
+bindkey '^n' history-search-forward
 bindkey "^a" beginning-of-line
 bindkey "^e" end-of-line
-bindkey "^k" kill-line
 bindkey "^j" backward-word
 bindkey "^k" forward-word
 bindkey "^H" backward-kill-word
-# ctrl J & K for going up and down in prev commands
-bindkey "^J" history-search-forward
-bindkey "^K" history-search-backward
 
 # Keep 1000 lines of history within the shell and save it to ~/.zsh_history:
 HISTSIZE=1000000
