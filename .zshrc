@@ -8,11 +8,20 @@ fi
 # zmodload zsh/zprof
 # Use emacs keybindings even if our EDITOR is set to vi
 bindkey -e
-bindkey '^p' history-search-backward
-bindkey '^n' history-search-forward
+# bindkey '^p' history-search-backward
+# bindkey '^n' history-search-forward# binds
+bindkey "^a" beginning-of-line
+bindkey "^e" end-of-line
+bindkey "^k" kill-line
+bindkey "^j" backward-word
+bindkey "^k" forward-word
+bindkey "^H" backward-kill-word
+# ctrl J & K for going up and down in prev commands
+bindkey "^J" history-search-forward
+bindkey "^K" history-search-backward
 
 # Keep 1000 lines of history within the shell and save it to ~/.zsh_history:
-HISTSIZE=5000
+HISTSIZE=1000000
 SAVEHIST=$HISTSIZE
 HISTFILE=~/.zsh_history
 HISTDUP=erase
@@ -64,7 +73,6 @@ source <(fzf --zsh)
 # custom gautam shortcuts
 alias rg="rg --hyperlink-format=kitty"
 alias ls="eza --hyperlink --color=auto --icons=always"
-alias qup="sudo apt update && sudo apt upgrade -y"
 alias ll="ls -alF"
 alias la="ls -a"
 alias c="clear"
@@ -75,12 +83,10 @@ alias sfetch="fastfetch -c ~/.config/fastfetch/gp_short.jsonc"
 alias nv="nvim"
 # alias cdw="cd ~/Documents/Internship && conda activate dscut"
 alias dgit='git --git-dir=$HOME/.dotfiles/ --work-tree=$HOME'
-# alias mpy='mpv --no-resume-playback'
-alias wather='curl wttr.in'
-alias nvk='NVIM_APPNAME="nvim-kickstart" nvim'
+alias ldgit="lazygit --git-dir=$HOME/.dotfiles --work-tree=$HOME"
+alias weather='curl wttr.in'
 alias cd='z'
-export MANPAGER="bat -l man"
-
+export MANPAGER="sh -c 'awk '\''{ gsub(/\x1B\[[0-9;]*m/, \"\", \$0); gsub(/.\x08/, \"\", \$0); print }'\'' | bat -p -lman'"
 
 # >>> conda initialize >>>
 # !! Contents within this block are managed by 'conda init' !!
