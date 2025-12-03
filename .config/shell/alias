@@ -1,0 +1,17 @@
+alias \
+\
+c="clear" \
+grep="grep --color=auto" \
+rg="rg --hyperlink-format=kitty" \
+ls="eza --hyperlink --color=auto --icons=always --group-directories-first" \
+ll="ls -ahlF" \
+la="ls -a" \
+q="exit" \
+cat="bat" \
+fetch="fastfetch -c ~/.config/fastfetch/gp.jsonc" \
+sfetch="fastfetch -c ~/.config/fastfetch/gp_short.jsonc" \
+nv="nvim" \
+dgit='git --git-dir=$HOME/.dotfiles/ --work-tree=$HOME' \
+ldgit="lazygit --git-dir=$HOME/.dotfiles --work-tree=$HOME" \
+weather='curl wttr.in' \
+cd='z' \

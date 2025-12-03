@@ -1,0 +1,14 @@
+#!/usr/bin/env bash
+
+set -e
+
+# Determine directory of this script
+SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
+
+# Load .env from same directory
+set -o allexport
+source "$SCRIPT_DIR/.env"
+set +o allexport
+
+# Run python script from the same directory
+python "$SCRIPT_DIR/telesend.py" "$@"

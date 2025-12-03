@@ -1,0 +1,21 @@
+#!/usr/bin/env bash
+
+set -o allexport
+source .env
+set +o allexport
+
+if [ $# -gt 0 ]; then
+	MESSAGE=$*
+else
+	MESSAGE="✅ Script finished running!"
+fi
+
+curl -s -X POST "https://api.telegram.org/bot$TG_BOT_TOKEN/sendMessage" \
+	-d "chat_id=$TG_CHAT_ID&text=$MESSAGE" 1>/dev/null
+if [ $? -ne 0 ]; then
+	echo "Failed to send notification."
+	exit 1
+else
+	echo "Notification sent successfully."
+	exit 0
+fi

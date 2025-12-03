@@ -1,0 +1,54 @@
+#!/usr/bin/env bash
+
+# Directories to handle
+dirs=(
+	"$HOME/.config/nvim"
+	"$HOME/.local/share/nvim"
+	"$HOME/.local/state/nvim"
+	"$HOME/.cache/nvim"
+)
+echo "This script will let you remove, backup, or skip Neovim-related folders."
+echo
+
+# Function to handle user choice
+handle_dir() {
+	local dir="$1"
+
+	if [ ! -d "$dir" ]; then
+		echo "❌ $dir does not exist, skipping."
+		return
+	fi
+
+	echo "Found: $dir"
+	echo "Choose an action:"
+	echo "  [r] Remove"
+	echo "  [b] Backup"
+	echo "  [s] Skip"
+	read -rp "Your choice (r/b/s): " choice
+
+	case "$choice" in
+	r | R)
+		rm -rf "$dir"
+		echo "🗑️  Removed $dir"
+		;;
+	b | B)
+		cp -r "$dir" "${dir}.bak"
+		echo "📦 Backed up $dir → ${dir}.bak"
+		;;
+	s | S)
+		echo "⏭️  Skipped $dir"
+		;;
+	*)
+		echo "⚠️  Invalid choice. Skipping."
+		;;
+	esac
+
+	echo
+}
+
+# Loop through directories
+for dir in "${dirs[@]}"; do
+	handle_dir "$dir"
+done
+
+echo "✅ All done!"

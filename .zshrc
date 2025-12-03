@@ -25,6 +25,9 @@ setopt appendhistory
 setopt hist_ignore_all_dups sharehistory hist_ignore_space hist_save_no_dups hist_ignore_dups
 setopt hist_find_no_dups
 
+# source global shell alias & variables files
+[ -f "$XDG_CONFIG_HOME/shell/alias" ] && source "$XDG_CONFIG_HOME/shell/alias"
+[ -f "$XDG_CONFIG_HOME/shell/vars" ] && source "$XDG_CONFIG_HOME/shell/vars"
 
 # zstyle ':completion:*' auto-description 'specify: %d'
 # zstyle ':completion:*' completer _expand _complete _correct _approximate
@@ -50,7 +53,6 @@ zstyle ':fzf-tab:complete:cd:*' fzf-preview 'eza --color=auto --icons=auto $real
 # Initialize Homebrew
 eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"
 
-
 # Load nvm (Node Version Manager)
 export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"                   # This loads nvm
@@ -67,21 +69,6 @@ source <(fzf --zsh)
 
 
 # custom gautam shortcuts
-alias rg="rg --hyperlink-format=kitty"
-alias ls="eza --hyperlink --color=auto --icons=always"
-alias ll="ls -alF"
-alias la="ls -a"
-alias c="clear"
-alias q="exit"
-alias cat="bat"
-alias fetch="fastfetch -c ~/.config/fastfetch/gp.jsonc"
-alias sfetch="fastfetch -c ~/.config/fastfetch/gp_short.jsonc"
-alias nv="nvim"
-# alias cdw="cd ~/Documents/Internship && conda activate dscut"
-alias dgit='git --git-dir=$HOME/.dotfiles/ --work-tree=$HOME'
-alias ldgit="lazygit --git-dir=$HOME/.dotfiles --work-tree=$HOME"
-alias weather='curl wttr.in'
-alias cd='z'
 export MANPAGER="sh -c 'awk '\''{ gsub(/\x1B\[[0-9;]*m/, \"\", \$0); gsub(/.\x08/, \"\", \$0); print }'\'' | bat -p -lman'"
 
 # >>> conda initialize >>>
@@ -114,7 +101,6 @@ unset __mamba_setup
 # <<< mamba initialize <<<
 
 # Yazi shell cd after exiting
-export EDITOR="nvim"
 function y() {
 	local tmp="$(mktemp -t "yazi-cwd.XXXXXX")" cwd
 	yazi "$@" --cwd-file="$tmp"
