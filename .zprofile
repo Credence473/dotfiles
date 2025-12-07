@@ -21,8 +21,8 @@ export FZF_CTRL_T_OPTS="--preview 'batcat --color=always -n --line-range :500 {}
 export FZF_ALT_C_OPTS="--preview 'eza --icons=always --tree --color=always {} | head -200'"
 
 #for git
-# export SSH_ASKPASS=/usr/bin/ksshaskpass
-# export SSH_ASKPASS_REQUIRE=prefer
+export SSH_ASKPASS=/usr/bin/ksshaskpass
+export SSH_ASKPASS_REQUIRE=prefer
 
 # follow XDG base dir specification
 export XDG_CONFIG_HOME="$HOME/.config"
