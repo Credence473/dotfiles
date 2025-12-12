@@ -1,0 +1,106 @@
+#!/usr/bin/env python3
+import os
+import shutil
+import argparse
+
+# Define filetype groups
+FILE_GROUPS = {
+    "images": ["jpg", "jpeg", "png", "gif", "bmp", "tiff", "svg", "webp"],
+    "documents": [
+        "pdf",
+        "doc",
+        "docx",
+        "txt",
+        "rtf",
+        "odt",
+        "ppt",
+        "pptx",
+        "xls",
+        "xlsx",
+        "csv",
+    ],
+    "audio": ["mp3", "wav", "flac", "aac", "ogg", "m4a"],
+    "video": ["mp4", "mov", "avi", "mkv", "wmv", "flv"],
+    "archives": ["zip", "tar", "gz", "rar", "7z"],
+    "code": [
+        "py",
+        "js",
+        "ts",
+        "java",
+        "cpp",
+        "c",
+        "cs",
+        "html",
+        "css",
+        "json",
+        "ipynb",
+    ],
+}
+
+
+def get_group_for_extension(ext):
+    for group, extensions in FILE_GROUPS.items():
+        if ext in extensions:
+            return group
+    return "other"
+
+
+def organize_files(base_path: str, dry_run: bool = False):
+    for item in os.listdir(base_path):
+        item_path = os.path.join(base_path, item)
+
+        # Skip directories
+        if os.path.isdir(item_path):
+            continue
+
+        # Extract extension
+        _, ext = os.path.splitext(item)
+        ext = ext.lower().lstrip(".")
+
+        if ext == "":
+            group = "no_ext"
+        else:
+            group = get_group_for_extension(ext)
+
+        target_folder = os.path.join(base_path, group)
+
+        # Dry run printout
+        if dry_run:
+            print(f"[DRY RUN] Would move: {item_path} -> {target_folder}/")
+            continue
+
+        # Create target directory
+        os.makedirs(target_folder, exist_ok=True)
+
+        # Move the file
+        shutil.move(item_path, os.path.join(target_folder, item))
+        print(f"Moved: {item_path} -> {target_folder}/")
+
+    if dry_run:
+        print("Dry run complete. No files were moved.")
+    else:
+        print("Organization complete.")
+
+
+def main():
+    parser = argparse.ArgumentParser(
+        prog="Directory Sorter", description="Organize files by grouped filetypes."
+    )
+    parser.add_argument(
+        "-p",
+        "--path",
+        default=".",
+        help="Directory to organize (default: current directory).",
+    )
+    parser.add_argument(
+        "--dry-run",
+        action="store_true",
+        help="Preview actions without changing any files.",
+    )
+    args = parser.parse_args()
+
+    organize_files(args.path, dry_run=args.dry_run)
+
+
+if __name__ == "__main__":
+    main()
