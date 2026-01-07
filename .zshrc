@@ -82,6 +82,10 @@ function y() {
 }
 
 
+#Load Completions 
+autoload -Uz compinit
+compinit -C
+
 ### Added by Zinit's installer
 if [[ ! -f $HOME/.local/share/zinit/zinit.git/zinit.zsh ]]; then
     print -P "%F{33} %F{220}Installing %F{33}ZDHARMA-CONTINUUM%F{220} Initiative Plugin Manager (%F{33}zdharma-continuum/zinit%F{220})…%f"
@@ -119,14 +123,31 @@ zinit snippet OMZP::sudo
 zinit snippet OMZP::dirhistory
 
 
+############## eza ##############*
+zstyle ':omz:plugins:eza' 'dirs-first' yes
+zstyle ':omz:plugins:eza' 'git-status' yes
+zstyle ':omz:plugins:eza' 'header' yes
+zstyle ':omz:plugins:eza' 'show-group' yes
+zstyle ':omz:plugins:eza' 'icons' yes
+zstyle ':omz:plugins:eza' 'color-scale' all
+zstyle ':omz:plugins:eza' 'color-scale-mode' fixed
+zstyle ':omz:plugins:eza' 'hyperlink' yes
 
-# Initialize oh my posh 
-# eval "$(oh-my-posh init zsh --config $HOME/mocha_custom.toml)"
+zinit snippet OMZP::eza
 
+#QR code 
+qrcode () {
+	local input="$*"
+	[ -z "$input" ] && local input="@/dev/stdin"
+	curl -d "$input" https://qrcode.show
+}
 
-#Load Completions 
-autoload -Uz compinit
-compinit -C
+qrsvg () {
+	local input="$*"
+	[ -z "$input" ] && local input="@/dev/stdin"
+	curl -d "${input}" https://qrcode.show -H "Accept: image/svg+xml"
+}
+
 
 # zprof
 
