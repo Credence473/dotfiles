@@ -135,6 +135,13 @@ zstyle ':omz:plugins:eza' 'hyperlink' yes
 
 zinit snippet OMZP::eza
 
+# auto ls 
+chpwd() {
+  ll
+}
+
+
+
 #QR code 
 qrcode () {
 	local input="$*"
