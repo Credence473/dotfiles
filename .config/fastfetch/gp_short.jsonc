@@ -19,8 +19,10 @@
       "unit": "C",
     },
     "bar": {
-      "charElapsed": "■",
-      "charTotal": "□",
+		"char": {
+      		"elapsed": "■",
+      		"total": "□",
+			},
       "width": 10,
     },
     "percent": { "type": 9 },
