@@ -15,3 +15,4 @@ dgit='git --git-dir=$HOME/.dotfiles/ --work-tree=$HOME' \
 ldgit="lazygit --git-dir=$HOME/.dotfiles --work-tree=$HOME" \
 weather='curl wttr.in' \
 cd='z' \
+winrule='qdbus org.kde.KWin /KWin org.kde.KWin.queryWindowInfo' \
