@@ -204,17 +204,17 @@
       "type": "publicip",
       "timeout": 100,
     },
-    // {
-    //   "key": "Wi-Fi        ",
-    //   "keyColor": "blue",
-    //   "type": "wifi",
-    //   "format": "{ssid}",
-    // },
-    // {
-    //   "key": "Locale       ",
-    //   "keyColor": "magenta",
-    //   "type": "locale",
-    // },
+    {
+      "key": "Wi-Fi        ",
+      "keyColor": "blue",
+      "type": "wifi",
+      "format": "{ssid}",
+    },
+    {
+      "key": "Locale       ",
+      "keyColor": "magenta",
+      "type": "locale",
+    },
     // "break",
     {
       "type": "custom",
