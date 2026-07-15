@@ -189,3 +189,30 @@ else
 fi
 unset __mamba_setup
 # <<< mamba initialize <<<
+
+fpath+=~/.zfunc; autoload -Uz compinit; compinit
+
+function vv() {
+    local dir="$PWD"
+
+    while [[ "$dir" != "/" ]]; do
+        if [[ -f "$dir/.venv/bin/activate" ]]; then
+            if [[ "$VIRTUAL_ENV" != "$dir/.venv" ]]; then
+                source "$dir/.venv/bin/activate"
+            else
+                echo "Already using $VIRTUAL_ENV"
+            fi
+            return
+        fi
+        dir="${dir:h}"
+    done
+
+    echo "No .venv found"
+}
+
+# load .env variables if present
+if [ -f .env ]; then
+	export $(grep -v '^#' .env | xargs)
+fi
+
+. "$HOME/.local/share/../bin/env"
