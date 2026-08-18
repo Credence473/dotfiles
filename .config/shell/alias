@@ -3,8 +3,8 @@ alias \
 c="clear" \
 grep="grep --color=auto" \
 rg="rg --hyperlink-format=kitty" \
-ls="eza --hyperlink --color=auto --icons=always --group-directories-first" \
-ll="ls -ahlF" \
+ls="eza --hyperlink=always --color=auto --icons=always --group-directories-first" \
+ll="ls -ahl" \
 la="ls -a" \
 q="exit" \
 cat="bat" \

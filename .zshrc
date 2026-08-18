@@ -133,7 +133,7 @@ zstyle ':omz:plugins:eza' 'color-scale' all
 zstyle ':omz:plugins:eza' 'color-scale-mode' fixed
 zstyle ':omz:plugins:eza' 'hyperlink' yes
 
-zinit snippet OMZP::eza
+# zinit snippet OMZP::eza
 
 # auto ls 
 chpwd() {
