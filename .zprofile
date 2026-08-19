@@ -23,6 +23,7 @@ export FZF_ALT_C_OPTS="--preview 'eza --icons=always --tree --color=always {} | 
 #for git
 # export SSH_ASKPASS=/usr/bin/ksshaskpass
 # export SSH_ASKPASS_REQUIRE=prefer
+export SSH_AUTH_SOCK="$XDG_RUNTIME_DIR/gcr/ssh"
 
 # follow XDG base dir specification
 export XDG_CONFIG_HOME="$HOME/.config"
