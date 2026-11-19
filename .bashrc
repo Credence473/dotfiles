@@ -25,3 +25,6 @@ fi
 unset rc
 
 . "$HOME/.local/share/../bin/env"
+
+# nirimod
+export PATH="$HOME/.local/bin:$PATH"
